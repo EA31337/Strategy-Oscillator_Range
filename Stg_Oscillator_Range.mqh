@@ -36,12 +36,12 @@ INPUT_GROUP("Oscillator_Range strategy: main strategy params");
 INPUT ENUM_STG_OSCILLATOR_RANGE_TYPE Oscillator_Range_Type = STG_OSCILLATOR_RANGE_TYPE_RSI;  // Oscillator_Range type
 INPUT_GROUP("Oscillator_Range strategy: strategy params");
 INPUT float Oscillator_Range_LotSize = 0;                // Lot size
-INPUT int Oscillator_Range_SignalOpenMethod = 3;         // Signal open method
-INPUT float Oscillator_Range_SignalOpenLevel = 20.0f;    // Signal open level
+INPUT int Oscillator_Range_SignalOpenMethod = 0;         // Signal open method
+INPUT float Oscillator_Range_SignalOpenLevel = 50.0f;    // Signal open level
 INPUT int Oscillator_Range_SignalOpenFilterMethod = 32;  // Signal open filter method
 INPUT int Oscillator_Range_SignalOpenFilterTime = 3;     // Signal open filter time (0-31)
 INPUT int Oscillator_Range_SignalOpenBoostMethod = 0;    // Signal open boost method
-INPUT int Oscillator_Range_SignalCloseMethod = 20.0f;    // Signal close method
+INPUT int Oscillator_Range_SignalCloseMethod = 50.0f;    // Signal close method
 INPUT int Oscillator_Range_SignalCloseFilter = 32;       // Signal close filter (-127-127)
 INPUT float Oscillator_Range_SignalCloseLevel = 0;       // Signal close level
 INPUT int Oscillator_Range_PriceStopMethod = 0;          // Price limit method

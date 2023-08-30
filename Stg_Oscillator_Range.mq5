@@ -1,6 +1,6 @@
 /**
  * @file
- * Implements Oscillator strategy.
+ * Implements Oscillator Range strategy.
  */
 
 // Includes conditional compilation directives.
@@ -33,7 +33,7 @@
 #include <EA31337-classes/Indicators/Indi_Volumes.mqh>
 #include <EA31337-classes/Indicators/Indi_WPR.mqh>
 #include <EA31337-classes/Indicators/Indi_WilliamsAD.mqh>
-// #include <EA31337-classes/Indicators/Oscillator/includes.h>
+// #include <EA31337-classes/Indicators/Oscillator_Range/includes.h>
 #include <EA31337-classes/Strategy.mqh>
 
 // Inputs.
@@ -46,10 +46,10 @@ input bool Info_On_Chart = true;          // Display info on chart.
 #include "Stg_Oscillator_Range.mqh"
 
 // Defines.
-#define ea_name "Strategy Oscillator"
+#define ea_name "Strategy Oscillator_Range"
 #define ea_version "2.000"
-#define ea_desc "Strategy based on selected oscillator-type multi-valued indicators."
-#define ea_link "https://github.com/EA31337/Strategy-Oscillator"
+#define ea_desc "Strategy based on selected oscillator-type range-valued indicators."
+#define ea_link "https://github.com/EA31337/Strategy-Oscillator_Range"
 #define ea_author "EA31337 Ltd"
 
 // Properties.
@@ -75,7 +75,7 @@ int OnInit() {
   bool _result = true;
   EAParams ea_params(__FILE__, Log_Level);
   ea = new EA(ea_params);
-  _result &= ea.StrategyAdd<Stg_Oscillator>(Active_Tfs);
+  _result &= ea.StrategyAdd<Stg_Oscillator_Range>(Active_Tfs);
   return (_result ? INIT_SUCCEEDED : INIT_FAILED);
 }
 

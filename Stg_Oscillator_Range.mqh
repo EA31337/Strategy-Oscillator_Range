@@ -1,6 +1,6 @@
 /**
  * @file
- * Implements Oscillator_Range strategy based on the Oscillator_Range indicator.
+ * Implements Oscillator Range strategy.
  */
 
 enum ENUM_STG_OSCILLATOR_RANGE_TYPE {
@@ -189,11 +189,11 @@ struct Stg_Oscillator_Range_Params_Defaults : StgParams {
                   ::Oscillator_Range_SignalCloseLevel, ::Oscillator_Range_PriceStopMethod,
                   ::Oscillator_Range_PriceStopLevel, ::Oscillator_Range_TickFilterMethod, ::Oscillator_Range_MaxSpread,
                   ::Oscillator_Range_Shift) {
-    Set(STRAT_PARAM_LS, Oscillator_Range_LotSize);
-    Set(STRAT_PARAM_OCL, Oscillator_Range_OrderCloseLoss);
-    Set(STRAT_PARAM_OCP, Oscillator_Range_OrderCloseProfit);
-    Set(STRAT_PARAM_OCT, Oscillator_Range_OrderCloseTime);
-    Set(STRAT_PARAM_SOFT, Oscillator_Range_SignalOpenFilterTime);
+    Set(STRAT_PARAM_LS, ::Oscillator_Range_LotSize);
+    Set(STRAT_PARAM_OCL, ::Oscillator_Range_OrderCloseLoss);
+    Set(STRAT_PARAM_OCP, ::Oscillator_Range_OrderCloseProfit);
+    Set(STRAT_PARAM_OCT, ::Oscillator_Range_OrderCloseTime);
+    Set(STRAT_PARAM_SOFT, ::Oscillator_Range_SignalOpenFilterTime);
   }
   // Getters.
   int GetMin() { return min; }
@@ -218,7 +218,7 @@ class Stg_Oscillator_Range : public Strategy {
     // Initialize Strategy instance.
     ChartParams _cparams(_tf, _Symbol);
     TradeParams _tparams;
-    Strategy *_strat = new Stg_Oscillator_Range(_stg_params, _tparams, _cparams, "Oscillator_Range");
+    Strategy *_strat = new Stg_Oscillator_Range(_stg_params, _tparams, _cparams, "Oscillator Range");
     return _strat;
   }
 
@@ -227,7 +227,7 @@ class Stg_Oscillator_Range : public Strategy {
    */
   bool IsValidEntry(IndicatorBase *_indi, int _shift = 0) {
     bool _result = true;
-    switch (Oscillator_Range_Type) {
+    switch (::Oscillator_Range_Type) {
         /*
           case STG_OSCILLATOR_RANGE_TYPE_AC:
             _result &= dynamic_cast<Indi_AC *>(_indi).GetFlag(INDI_ENTRY_FLAG_IS_VALID, _shift) &&
